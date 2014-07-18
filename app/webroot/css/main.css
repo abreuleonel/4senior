@@ -1,0 +1,51 @@
+body {
+	padding: 10px;
+}
+
+.form-login {
+	width: 40%;
+	margin: 0 auto;
+}
+
+.highlight {
+	padding: 9px 14px;
+	margin-bottom: 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+}
+
+.label-danger, .label-success {
+	font-size: 18px;
+	width: 100% !important;
+	display: block;
+	padding: 10px;
+}
+
+.novo {
+	clear: both;
+	font-size: 18px;
+}
+
+.perguntas_lista {
+	height: 75px;
+	border-bottom: 1px dashed gray;
+}
+
+.perguntas_lista:last-child {
+	border: none;
+}
+
+.perguntas_lista .label {
+	padding: 11px;
+}
+
+.perguntas_lista h3 {
+	float: left;
+}
+
+.labels-perguntas {
+	float: left;
+	margin-left: 20px;
+	margin-top: 15px;
+}
