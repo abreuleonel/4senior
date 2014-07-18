@@ -1,0 +1,131 @@
+-- MySQL dump 10.13  Distrib 5.5.38, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: 4senior
+-- ------------------------------------------------------
+-- Server version	5.5.38-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `formularios`
+--
+
+DROP TABLE IF EXISTS `formularios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `formularios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `formularios`
+--
+
+LOCK TABLES `formularios` WRITE;
+/*!40000 ALTER TABLE `formularios` DISABLE KEYS */;
+INSERT INTO `formularios` VALUES (1,'FormTeste4'),(2,'FormTeste2'),(3,'FormTeste3'),(4,'sdasdasd2'),(5,'Form123'),(6,'Teste 321'),(7,'sdfsdfsd'),(8,'asdasdasdasd'),(9,'Formulario 1');
+/*!40000 ALTER TABLE `formularios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `perguntas`
+--
+
+DROP TABLE IF EXISTS `perguntas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `perguntas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_pergunta_id` int(11) NOT NULL,
+  `formulario_id` int(11) NOT NULL,
+  `pergunta` varchar(200) NOT NULL,
+  `ordem` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perguntas`
+--
+
+LOCK TABLES `perguntas` WRITE;
+/*!40000 ALTER TABLE `perguntas` DISABLE KEYS */;
+INSERT INTO `perguntas` VALUES (6,2,9,'É fumante?',1),(7,2,9,'Tem alguma doença cardiaca?',2),(8,2,9,'Já se submeteu a algum procedimento cirurgico?',3),(9,2,9,'Pratica alguma atividade fisica durante a semana?',4),(10,3,9,'Quantas vezes?',5);
+/*!40000 ALTER TABLE `perguntas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tipo_perguntas`
+--
+
+DROP TABLE IF EXISTS `tipo_perguntas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tipo_perguntas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `campo` varchar(45) NOT NULL,
+  `descricao` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipo_perguntas`
+--
+
+LOCK TABLES `tipo_perguntas` WRITE;
+/*!40000 ALTER TABLE `tipo_perguntas` DISABLE KEYS */;
+INSERT INTO `tipo_perguntas` VALUES (1,'checkbox','Multipla escolha'),(2,'radio-button','Sim ou Não'),(3,'textarea','Dissertativa');
+/*!40000 ALTER TABLE `tipo_perguntas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `login` varchar(45) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Bruno de Abreu','abreuleonel','abreuleonel64@gmail.com','1987a2daea02cbb5418e72c35c736d4770ed1b15',1);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-07-18 17:52:35
