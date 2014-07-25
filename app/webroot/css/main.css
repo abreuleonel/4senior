@@ -49,3 +49,8 @@ body {
 	margin-left: 20px;
 	margin-top: 15px;
 }
+
+.opcoes {
+	clear: both;
+	width: 30%;
+}
